@@ -1,0 +1,20 @@
+* {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 3vh;
+}
+
+.data {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.time {
+  opacity: 0.75;
+  font-size: 1.5vh;
+}
+.recovered {
+  color:rgba(37, 163, 37, 0.856);
+}
+.deaths {
+  color: rgba(180, 11, 11, 0.87);
+}

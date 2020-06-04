@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import ReactDOM from 'react-dom';
 
 import CoronaData from './data';
+import Chart from './chart';
 
 const App = () => {
 	var unirest = require('unirest');
@@ -21,7 +22,8 @@ const App = () => {
 	const [recoveredCases, setRecoveredCases] = useState(0);
 	const [totalCases, setTotalCases] = useState(0);
 	const [totalDeaths, setTotalDeaths] = useState(0);
-	const [date, setDate] = useState('');
+	const [time, setTime] = useState('');
+	const [population, setPopulation] = useState(0);
 	req.end(function (res) {
 		if (res.error) throw new Error(res.error);
 
@@ -32,7 +34,8 @@ const App = () => {
 		setRecoveredCases(data.cases.recovered);
 		setTotalCases(data.cases.total);
 		setTotalDeaths(data.deaths.total);
-		setDate(data.day);
+		setTime(data.time);
+		setPopulation(data.population);
 	});
 
 	return (
@@ -44,8 +47,10 @@ const App = () => {
 				recovered={recoveredCases}
 				total={totalCases}
 				deaths={totalDeaths}
-				date={date}
+				time={time}
+				population={population}
 			/>
+			<Chart />
 		</>
 	);
 };
