@@ -9,7 +9,7 @@ const CoronaData = ({
 	deaths,
 	date,
 }) => {
-	return <>data: {date}</>;
+	return <>{date}</>;
 };
 
 export default CoronaData;
